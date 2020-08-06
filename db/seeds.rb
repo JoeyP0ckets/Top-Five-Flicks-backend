@@ -63,9 +63,6 @@ end
     rating: Faker::Number.between(from: 0, to: 5),
     user_id: User.all.sample.id
   )
-end
-
-
-5.times do 
-
+end 
+5.times do
 end
