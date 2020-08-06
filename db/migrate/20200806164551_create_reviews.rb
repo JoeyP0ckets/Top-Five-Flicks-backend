@@ -9,8 +9,7 @@ class CreateReviews < ActiveRecord::Migration[6.0]
       t.text :cinematography
       t.text :art_direction
       t.text :soundtrack
-      t.text :overall
-      t.integer :user_rating
+      t.integer :rating
       t.references :user, null: false, foreign_key: true
 
       t.timestamps

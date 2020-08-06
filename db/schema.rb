@@ -10,9 +10,72 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2020_08_06_165043) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "reviews", force: :cascade do |t|
+    t.string "imdb_id"
+    t.string "title"
+    t.string "year"
+    t.text "directing"
+    t.text "acting"
+    t.text "cinematography"
+    t.text "art_direction"
+    t.text "soundtrack"
+    t.integer "rating"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
+
+  create_table "top_five_movies", force: :cascade do |t|
+    t.string "imdb_id"
+    t.string "title"
+    t.bigint "top_five_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["top_five_id"], name: "index_top_five_movies_on_top_five_id"
+  end
+
+  create_table "top_fives", force: :cascade do |t|
+    t.string "category"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_top_fives_on_user_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "username"
+    t.string "password"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "watchlist_movies", force: :cascade do |t|
+    t.string "imdb_id"
+    t.string "poster"
+    t.string "title"
+    t.string "year"
+    t.bigint "watchlist_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["watchlist_id"], name: "index_watchlist_movies_on_watchlist_id"
+  end
+
+  create_table "watchlists", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_watchlists_on_user_id"
+  end
+
+  add_foreign_key "reviews", "users"
+  add_foreign_key "top_five_movies", "top_fives", column: "top_five_id"
+  add_foreign_key "top_fives", "users"
+  add_foreign_key "watchlist_movies", "watchlists"
+  add_foreign_key "watchlists", "users"
 end
