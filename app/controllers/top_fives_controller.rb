@@ -1,0 +1,2 @@
+class TopFivesController < ApplicationController
+end
