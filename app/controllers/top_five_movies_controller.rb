@@ -1,2 +1,0 @@
-class TopFiveMoviesController < ApplicationController
-end
