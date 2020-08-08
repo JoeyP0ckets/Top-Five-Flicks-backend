@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+# TopFiveMovie.destroy_all
 # TopFive.destroy_all
 # WatchlistMovie.destroy_all
 # Watchlist.destroy_all
@@ -76,8 +77,8 @@
 #  TopFive.create(category: "Top 5 70's Dramas", user_id: User.first.id)
 #  TopFive.create(category: "Top 5 Tom Hanks Movies", user_id: User.first.id)
 
- TopFiveMovie.create(imdb_id: "tt0114694", title: "Tommy Boy", top_five_id: TopFive.first.id)
- TopFiveMovie.create(imdb_id: "tt0109686", title: "Dumb and Dumber", top_five_id: TopFive.first.id)
- TopFiveMovie.create(imdb_id: "tt0129387", title: "There's Something About Mary", top_five_id: TopFive.first.id)
- TopFiveMovie.create(imdb_id: "tt0110006", title: "Heavyweights", top_five_id: TopFive.first.id)
- TopFiveMovie.create(imdb_id: "tt0104952", title: "My Cousin Vinny", top_five_id: TopFive.first.id)
+#  TopFiveMovie.create(imdb_id: "tt0114694", title: "Tommy Boy", top_five_id: TopFive.first.id)
+#  TopFiveMovie.create(imdb_id: "tt0109686", title: "Dumb and Dumber", top_five_id: TopFive.first.id)
+#  TopFiveMovie.create(imdb_id: "tt0129387", title: "There's Something About Mary", top_five_id: TopFive.first.id)
+#  TopFiveMovie.create(imdb_id: "tt0110006", title: "Heavyweights", top_five_id: TopFive.first.id)
+#  TopFiveMovie.create(imdb_id: "tt0104952", title: "My Cousin Vinny", top_five_id: TopFive.first.id)
