@@ -6,10 +6,10 @@ class Api::V1::UsersController < ApplicationController
       render json: users
   end
 
-  # def login
-  #     @user = User.find_by(username: params[:username])
-  #     render json: @user
-  # end
+  def login
+      @user = User.find_by(username: params[:username])
+      render json: @user
+  end
   
   def show
       render json: @user
@@ -34,6 +34,6 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def user_params
-      params.permit(:username, :password)
+      params.require(:user).permit(:username, :password)
   end
 end

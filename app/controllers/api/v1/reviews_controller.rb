@@ -11,9 +11,11 @@ class Api::V1::ReviewsController < ApplicationController
   end
 
   def create
+    # byebug
     review = Review.new(review_params)
     if review.save
       render json: review
+    end
   end
 
   def update 
@@ -32,6 +34,6 @@ class Api::V1::ReviewsController < ApplicationController
   end
 
   def review_params
-    params.permit(:imdb_id, :title, :year, :directing, :acting, :cinematography, :art_direction, :soundtrack, :rating)
+    params.require(:review).permit(:imdb_id, :title, :year, :directing, :acting, :cinematography, :art_direction, :soundtrack, :rating, :user_id)
   end
 end

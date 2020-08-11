@@ -6,7 +6,7 @@ Rails.application.routes.draw do
       resources :reviews
       resources :watchlist_movies
       resources :watchlists
-      resources :users
+      resources :users 
     end 
   end
 end
