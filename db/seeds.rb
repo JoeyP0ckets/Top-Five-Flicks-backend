@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-TopFiveMovie.destroy_all
+
 TopFive.destroy_all
 WatchlistMovie.destroy_all
 Watchlist.destroy_all
@@ -73,17 +73,21 @@ end
 end 
 
 
- TopFive.create(category: "Top 5 90's Comedies", user_id: User.first.id)
- TopFive.create(category: "Top 5 Romances", user_id: User.second.id)
- TopFive.create(category: "Top 5 80's Action", user_id: User.third.id)
- TopFive.create(category: "Top 5 FX movies", user_id: User.fourth.id)
- TopFive.create(category: "Top 5 Martial Arts", user_id: User.fifth.id)
- TopFive.create(category: "Top 5 Disney Movies", user_id: User.last.id)
- TopFive.create(category: "Top 5 70's Dramas", user_id: User.first.id)
- TopFive.create(category: "Top 5 Tom Hanks Movies", user_id: User.first.id)
-
- TopFiveMovie.create(imdb_id: "tt0114694", title: "Tommy Boy", top_five_id: TopFive.first.id)
- TopFiveMovie.create(imdb_id: "tt0109686", title: "Dumb and Dumber", top_five_id: TopFive.first.id)
- TopFiveMovie.create(imdb_id: "tt0129387", title: "There's Something About Mary", top_five_id: TopFive.first.id)
- TopFiveMovie.create(imdb_id: "tt0110006", title: "Heavyweights", top_five_id: TopFive.first.id)
- TopFiveMovie.create(imdb_id: "tt0104952", title: "My Cousin Vinny", top_five_id: TopFive.first.id)
+ TopFive.create(category: "Top 5 90's Comedies", titleOne: "Tommy Boy", titleTwo: "Dumb and Dumber", titleThree: "The Big Lebowski", titleFour: "My Cousin Vinny", titleFive: "Sean of the Dead", user_id: User.first.id)
+ TopFive.create(category: "Top 5 Romances", titleOne: "High Fidelity", titleTwo: "Shakespeare In Love", titleThree: "Notting Hill", titleFour: "The Notebook", titleFive: "Romeo and Juliet", user_id: User.second.id)
+ TopFive.create(category: "Top 5 80's Action", titleOne: "Predator", titleTwo: "Running Man", titleThree: "Robocop", titleFour: "Aliens", titleFive: "Terminator", user_id: User.third.id)
+ TopFive.create(category: "Top 5 FX movies", titleOne: "Aliens", titleTwo: "The Thing", titleThree: "Lord of the Rings Trilogy", titleFour: "Terminator 2", titleFive: "2001: A Space Odyssey", user_id: User.fourth.id)
+ TopFive.create(category: "Top 5 Martial Arts", titleOne: "Enter the Dragon", titleTwo: "Legend of Drunken Master", titleThree: "The Matrix", titleFour: "Crouching Tiger, Hidden Dragon", titleFive: "IP Man", user_id: User.fifth.id)
+ TopFive.create(category: "Top 5 Disney Movies", titleOne: "Aladdin", titleTwo: "The Emporer's New Groove", titleThree: "Beauty and the Beast", titleFour: "Robin Hood", titleFive: "101 Dalmations", user_id: User.last.id)
+ TopFive.create(category: "Top 5 70's Dramas", titleOne: "The Godfather", titleTwo: "Serpico", titleThree: "Kramer vs Kramer", titleFour: "A Clockwork Orange", titleFive: "One Flew Over the Cuckoo's Nest", user_id: User.first.id)
+ TopFive.create(category: "Top 5 Tom Hanks Movies", titleOne: "Saving Private Ryan", titleTwo: "BIG", titleThree: "Apollo 13", titleFour: "Castaway", titleFive: "A League of Their Own", user_id: User.first.id)
+ 
+ TopFive.create(category: "Top 5 90's Comedies", titleOne: "Tommy Boy", titleTwo: "Dumb and Dumber", titleThree: "The Big Lebowski", titleFour: "My Cousin Vinny", titleFive: "Sean of the Dead", user_id: User.second.id)
+ TopFive.create(category: "Top 5 Romances", titleOne: "High Fidelity", titleTwo: "Shakespeare In Love", titleThree: "Notting Hill", titleFour: "The Notebook", titleFive: "Romeo and Juliet", user_id: User.third.id)
+ TopFive.create(category: "Top 5 80's Action", titleOne: "Predator", titleTwo: "Running Man", titleThree: "Robocop", titleFour: "Aliens", titleFive: "Terminator", user_id: User.first.id)
+ TopFive.create(category: "Top 5 FX movies", titleOne: "Aliens", titleTwo: "The Thing", titleThree: "Lord of the Rings Trilogy", titleFour: "Terminator 2", titleFive: "2001: A Space Odyssey", user_id: User.fifth.id)
+ TopFive.create(category: "Top 5 Martial Arts", titleOne: "Enter the Dragon", titleTwo: "Legend of Drunken Master", titleThree: "The Matrix", titleFour: "Crouching Tiger, Hidden Dragon", titleFive: "IP Man", user_id: User.last.id)
+ TopFive.create(category: "Top 5 Disney Movies", titleOne: "Aladdin", titleTwo: "The Emporer's New Groove", titleThree: "Beauty and the Beast", titleFour: "Robin Hood", titleFive: "101 Dalmations", user_id: User.third.id)
+ TopFive.create(category: "Top 5 70's Dramas", titleOne: "The Godfather", titleTwo: "Serpico", titleThree: "Kramer vs Kramer", titleFour: "A Clockwork Orange", titleFive: "One Flew Over the Cuckoo's Nest", user_id: User.fourth.id)
+ TopFive.create(category: "Top 5 Tom Hanks Movies", titleOne: "Saving Private Ryan", titleTwo: "BIG", titleThree: "Apollo 13", titleFour: "Castaway", titleFive: "A League of Their Own", user_id: User.last.id)
+ 

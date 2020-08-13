@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_06_165043) do
+ActiveRecord::Schema.define(version: 2020_08_11_001358) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,17 +31,13 @@ ActiveRecord::Schema.define(version: 2020_08_06_165043) do
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
-  create_table "top_five_movies", force: :cascade do |t|
-    t.string "imdb_id"
-    t.string "title"
-    t.bigint "top_five_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["top_five_id"], name: "index_top_five_movies_on_top_five_id"
-  end
-
   create_table "top_fives", force: :cascade do |t|
     t.string "category"
+    t.string "titleOne"
+    t.string "titleTwo"
+    t.string "titleThree"
+    t.string "titleFour"
+    t.string "titleFive"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -74,8 +70,8 @@ ActiveRecord::Schema.define(version: 2020_08_06_165043) do
   end
 
   add_foreign_key "reviews", "users"
-  add_foreign_key "top_five_movies", "top_fives", column: "top_five_id"
   add_foreign_key "top_fives", "users"
   add_foreign_key "watchlist_movies", "watchlists"
   add_foreign_key "watchlists", "users"
 end
+# {"top_five"=>{"category"=>"Star Wars Flicks", "titleOne"=>"Empire Strikes Back", "titleTwo"=>"A New Hope", "titleThree"=>"Return of the Jedi", "titleFour"=>"Rogue One", "titleFive"=>"Clone Wars", "user_id"=>64}}

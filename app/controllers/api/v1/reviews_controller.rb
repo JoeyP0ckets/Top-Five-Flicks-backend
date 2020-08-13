@@ -37,3 +37,4 @@ class Api::V1::ReviewsController < ApplicationController
     params.require(:review).permit(:imdb_id, :title, :year, :directing, :acting, :cinematography, :art_direction, :soundtrack, :rating, :user_id)
   end
 end
+
