@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       resources :watchlist_movies
       resources :watchlists
       resources :users 
+      post '/users/login', to: 'users#login'
     end 
   end
 end

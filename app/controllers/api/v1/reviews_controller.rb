@@ -24,6 +24,7 @@ class Api::V1::ReviewsController < ApplicationController
   end
 
   def destroy
+    # byebug
     @review.destroy
   end
 

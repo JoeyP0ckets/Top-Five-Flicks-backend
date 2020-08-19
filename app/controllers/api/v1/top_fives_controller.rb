@@ -24,6 +24,7 @@ class Api::V1::TopFivesController < ApplicationController
   end
 
   def destroy
+    
     @top_five.destroy
   end
 
